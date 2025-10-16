@@ -7,7 +7,7 @@ import { type BelongsTo } from '@adonisjs/lucid/types/relations'
 import User from '#models/user'
 
 export default class Player extends BaseModel {
-  @column({ isPrimary: true })
+  @column({ isPrimary: true, columnName: 'player_id' })
   declare playerId: string
 
   @column()
@@ -44,10 +44,10 @@ export default class Player extends BaseModel {
   @column()
   declare is_substitute: 'yes' | 'no' | 'maybe'
 
-  @column()
+  @column({ columnName: 'user_id' })
   declare userId: number
 
-  @column()
+  @column({ columnName: 'game_id' })
   declare gameId: string
 
   @column.dateTime({ autoCreate: true })

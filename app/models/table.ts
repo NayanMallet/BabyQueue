@@ -4,7 +4,7 @@ import Game from '#models/game'
 import { type HasMany } from '@adonisjs/lucid/types/relations'
 
 export default class Table extends BaseModel {
-  @column({ isPrimary: true })
+  @column({ isPrimary: true, columnName: 'table_id' })
   declare tableId: string
 
   @column()

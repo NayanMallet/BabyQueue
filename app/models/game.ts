@@ -6,10 +6,10 @@ import Table from '#models/table'
 import Player from '#models/player'
 
 export default class Game extends BaseModel {
-  @column({ isPrimary: true })
+  @column({ isPrimary: true, columnName: 'game_id' })
   declare gameId: string
 
-  @column()
+  @column.dateTime()
   declare game_date: DateTime
 
   @column()
@@ -25,7 +25,7 @@ export default class Game extends BaseModel {
   @column()
   declare winner: GameColorsEnum
 
-  @column()
+  @column({ columnName: 'table_id' })
   declare tableId: string
 
   @column.dateTime({ autoCreate: true })
