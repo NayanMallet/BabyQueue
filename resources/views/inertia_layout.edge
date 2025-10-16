@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
   <title inertia>AdonisJS x Inertia x VueJS</title>
 
   <link rel="preconnect" href="https://fonts.bunny.net">
@@ -33,12 +33,10 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Instrument Sans', 'sans-serif'],
-          },
           colors: {
             primary: {
-              DEFAULT: '#5A45FF',
+              DEFAULT: "hsl(var(--primary))",
+              foreground: "hsl(var(--primary-foreground))",
             },
             sand: {
               1: 'var(--sand-1)',
@@ -67,6 +65,7 @@
 
 <body class="min-h-screen w-screen font-sans">
   @inertia()
+
 </body>
 
 </html>
