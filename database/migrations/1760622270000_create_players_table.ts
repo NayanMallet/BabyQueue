@@ -26,7 +26,8 @@ export default class extends BaseSchema {
       table.enum('is_substitute', ['yes', 'no', 'maybe']).notNullable()
 
       table.integer('user_id').unsigned().notNullable()
-      table.foreign('user_id').references('users.id').onDelete('CASCADE').onUpdate('CASCADE')
+      // The users table defines its primary key as `user_id`, so reference that column.
+      table.foreign('user_id').references('users.user_id').onDelete('CASCADE').onUpdate('CASCADE')
 
       table.string('game_id').notNullable()
       table.foreign('game_id').references('games.game_id').onDelete('CASCADE').onUpdate('CASCADE')
