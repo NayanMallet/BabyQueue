@@ -11,6 +11,7 @@ const showGameModes = ref(false);
 const showCreateJoinOptions = ref(false);
 const showJoinParty = ref(false);
 const showCreateParty = ref(false);
+const gameInProgress = ref(false);
 
 const handlePrivatePartyClick = () => {
     showGameModes.value = true;
@@ -27,16 +28,20 @@ const handleCreatePartyClick = () => {
 const handleJoinPartyClick = () => {
     showJoinParty.value = true;
 };
+
+const handleGameStarted = () => {
+    gameInProgress.value = true;
+};
 </script>
 
 <template>
     <PageTemplate>
         <!-- Affichage du lobby de création de partie -->
         <div v-if="showCreateParty" class="flex flex-col lg:flex-row gap-4 items-center justify-center lg:items-start lg:justify-center">
-            <WaitingLine :position="31" />
+            <WaitingLine v-if="!gameInProgress" :position="31" />
             
             <div class="flex flex-col items-center justify-center w-full max-w-xs">
-                <CreateParty />
+                <CreateParty @game-started="handleGameStarted" />
             </div>
         </div>
         

@@ -96,7 +96,7 @@ onUnmounted(() => {
 
         <!-- Liste des joueurs -->
         <div>
-          <h3 class="text-lg font-semibold text-center mb-4">Joueurs en attente</h3>
+          <h3 class="text-lg font-semibold text-center mb-4">En attente de l'hôte</h3>
           <div class="space-y-2">
             <div class="flex items-center justify-between p-3 bg-muted rounded-lg">
               <span class="font-medium">Vous</span>
@@ -111,7 +111,7 @@ onUnmounted(() => {
 
         <!-- Bouton démarrer (désactivé tant qu'il n'y a pas assez de joueurs) -->
         <Button
-          class="w-full text-base sm:text-lg font-bold"
+          class="w-full text-base sm:text-lg font-bold mt-6"
           disabled
         >
           En attente du lancement...
