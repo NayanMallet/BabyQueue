@@ -7,7 +7,7 @@ import pluralize from "pluralize"
 
 </script>
 <template>
-    <div class="flex flex-col items-center justify-center p-6 rounded-lg space-y-4">
+    <div class="flex flex-col items-center justify-center rounded-lg space-y-6">
         <h1 class="text-5xl font-bold">File d'attente</h1>
         <div class="rounded-full border-4 border-black w-18 h-18 flex items-center justify-center text-4xl font-medium text-gray-800 shadow-md">
             {{ position }}

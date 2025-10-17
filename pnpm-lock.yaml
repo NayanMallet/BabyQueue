@@ -92,6 +92,9 @@ importers:
       vue:
         specifier: ^3.5.22
         version: 3.5.22(typescript@5.8.3)
+      zod:
+        specifier: ^4.1.12
+        version: 4.1.12
     devDependencies:
       '@adonisjs/assembler':
         specifier: ^7.8.2
@@ -3400,6 +3403,9 @@ packages:
   youch@4.1.0-beta.11:
     resolution: {integrity: sha512-sQi6PERyO/mT8w564ojOVeAlYTtVQmC2GaktQAf+IdI75/GKIggosBuvyVXvEV+FATAT6RbLdIjFoiIId4ozoQ==}
 
+  zod@4.1.12:
+    resolution: {integrity: sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ==}
+
 snapshots:
 
   '@adobe/css-tools@4.4.4': {}
@@ -6504,3 +6510,5 @@ snapshots:
       '@speed-highlight/core': 1.2.7
       cookie: 1.0.2
       youch-core: 0.3.3
+
+  zod@4.1.12: {}

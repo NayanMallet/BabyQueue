@@ -10,28 +10,21 @@ import {
 } from '@/components/ui/table'
 import {
   Tabs,
-  TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import { Lock } from 'lucide-vue-next'
 </script>
 
 <template>
     <PageTemplate>
-        <Tabs default-value="account" class="w-[400px]">
-            <TabsList class="items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground grid w-full grid-cols-2">
-            <TabsTrigger class="box-border px-4 py-2" value="account">
+        <Tabs default-value="unranked" class="w-[400px]">
+            <TabsList class="grid w-full grid-cols-2">
+            <TabsTrigger value="unranked">
                 Unranked
             </TabsTrigger>
-            <TabsTrigger class="box-border" value="password" disabled>
-                <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        class="h-5 w-5 absolute" 
-                        viewBox="0 0 20 20" 
-                        fill="currentColor"
-                >
-                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                </svg>
+            <TabsTrigger value="ranked" disabled>
+                <Lock class="h-5 w-5 absolute" />
                 Ranked
             </TabsTrigger>
             </TabsList>
