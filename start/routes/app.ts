@@ -4,6 +4,7 @@ import { middleware } from '#start/kernel'
 const LeaderboardController = () => import('#controllers/leaderboard_controller')
 const ProfileController = () => import('#controllers/profile_controller')
 const UsersController = () => import('#controllers/users_controller')
+const PlayController = () => import('#controllers/play_controller')
 
 // guest routes
 router.group(() => {
@@ -16,6 +17,7 @@ router.group(() => {
   router.post('logout', [UsersController, 'logout']).as('auth.logout')
 
   router.get('leaderboard', [LeaderboardController, 'render']).as('pages.leaderboard')
+  router.get('play', [PlayController, 'render']).as('pages.play')
 })
 
 // protected routes
