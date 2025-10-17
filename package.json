@@ -19,6 +19,7 @@
     "#models/*": "./app/models/*.js",
     "#mails/*": "./app/mails/*.js",
     "#services/*": "./app/services/*.js",
+    "#enums/*": "./app/enums/*.js",
     "#listeners/*": "./app/listeners/*.js",
     "#events/*": "./app/events/*.js",
     "#middleware/*": "./app/middleware/*.js",
@@ -53,7 +54,7 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
-    "@adonisjs/auth": "^9.4.0",
+    "@adonisjs/auth": "^9.5.0",
     "@adonisjs/core": "^6.18.0",
     "@adonisjs/cors": "^2.2.1",
     "@adonisjs/inertia": "^3.1.1",

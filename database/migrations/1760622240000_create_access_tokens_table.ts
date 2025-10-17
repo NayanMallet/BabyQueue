@@ -4,13 +4,16 @@ export default class extends BaseSchema {
   protected tableName = 'auth_access_tokens'
 
   async up() {
+    // Drop the table if it already exists to handle failed migration attempts
+    this.schema.dropTableIfExists(this.tableName)
+
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table
         .integer('tokenable_id')
         .notNullable()
         .unsigned()
-        .references('id')
+        .references('user_id')
         .inTable('users')
         .onDelete('CASCADE')
 
