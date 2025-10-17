@@ -37,7 +37,7 @@ export default class UsersController {
         maxAge: 60 * 60 * 24 * 7,
       })
       logger.info(`User logged in: ${user.userId}`)
-      return response.ok({ token: raw, userId: user.userId })
+      return response.redirect('/')
     } catch (error) {
       logger.warn(`Login failed for ${email}: ${error.message}`)
       session.flash('errorsBag', {
@@ -62,13 +62,14 @@ export default class UsersController {
       path: '/',
       maxAge: 60 * 60 * 24 * 7,
     })
-    return response.created({ token: raw, userId: user.userId })
+    logger.info(`New user registered: ${user.userId}`)
+    return response.redirect('/')
   }
 
   // POST /logout
   async logout({ auth, response }: HttpContext) {
     await (auth.use('api') as ApiGuard).invalidateToken()
     response.clearCookie('api_token', { path: '/' })
-    return response.noContent()
+    return response.redirect().toPath('/login')
   }
 }

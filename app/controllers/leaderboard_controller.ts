@@ -4,7 +4,7 @@ import Database from '@adonisjs/lucid/services/db'
 import Player from '#models/player'
 
 export default class LeaderboardController {
-  async render({ response }: HttpContext) {
+  async render({ inertia }: HttpContext) {
     const rows = await Player.query()
       .join('users', 'users.user_id', 'players.user_id')
       .join('games', 'games.game_id', 'players.game_id')
@@ -17,7 +17,7 @@ export default class LeaderboardController {
       .orderBy('wins', 'desc')
       .pojo<{ username: string; wins: number }>()
 
-    return response.ok({
+    return inertia.render('leaderboard', {
       leaderboard: rows.map((r) => ({ username: r.username, wins: Number(r.wins || 0) })),
     })
   }
