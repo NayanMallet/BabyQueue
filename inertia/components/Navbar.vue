@@ -9,7 +9,7 @@ const page = usePage()
   <nav class="absolute bg-white border-t bottom-0 flex justify-around items-center w-full h-16">
     <a href="/leaderboard" class="flex flex-col items-center justify-center transition-colors h-full" :class="{ 'border-t-4 border-red-500': page.url === '/leaderboard' }">
       <Trophy />
-      <span>LeaderBoard</span>
+      <span>Classement</span>
     </a>
 
     <div class="absolute -mt-10">
@@ -18,7 +18,7 @@ const page = usePage()
         class="flex flex-col items-center justify-center bg-red-500 text-white rounded-full w-22 h-22 shadow-lg hover:bg-red-600 transition border-8 border-gray-100"
       >
         <Gamepad2 class="w-6 h-6" />
-        <span class="text-sm">Play</span>
+        <span class="text-sm">Jouer</span>
       </a>
     </div>
 
