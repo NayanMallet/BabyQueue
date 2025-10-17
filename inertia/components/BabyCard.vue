@@ -75,7 +75,7 @@ const statusColor = computed(() => {
                                 Status
                             </Label>
                             <Select v-model="editStatus" class="col-span-3">
-                                <SelectTrigger>
+                                <SelectTrigger class="min-w-full">
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -86,7 +86,7 @@ const statusColor = computed(() => {
                             </Select>
                         </div>
                     </div>
-                    <DialogFooter class="flex !justify-between">
+                    <DialogFooter class="flex !justify-between gap-2">
                         <Button variant="destructive">
                             Remove
                         </Button>

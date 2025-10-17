@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar.vue"
 </script>
 <template>
-  <div class="flex min-h-screen flex-col items-center justify-center bg-background p-6">
+  <div class="flex min-h-screen flex-col items-center justify-center bg-background p-6 pb-20">
       <slot></slot>
   </div>
   <Navbar />

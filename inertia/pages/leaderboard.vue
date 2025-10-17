@@ -18,8 +18,8 @@ import { Lock } from 'lucide-vue-next'
 
 <template>
     <PageTemplate>
-        <div class="flex flex-col justify-between items-center p-6 w-full">
-            <h1 class="font-bold text-3xl p-6">Classement des Joueurs</h1>
+        <div class="flex flex-col justify-between items-center w-full space-y-6">
+            <h1 class="font-bold text-3xl">Classement des Joueurs</h1>
             <Tabs default-value="unranked" class="w-full">
                 <TabsList class="grid w-full grid-cols-2">
                 <TabsTrigger value="unranked">
@@ -31,7 +31,7 @@ import { Lock } from 'lucide-vue-next'
                 </TabsTrigger>
                 </TabsList>
             </Tabs>
-            <div class="max-h-[70dvh] overflow-y-auto w-full">
+            <div class="max-h-[68dvh] overflow-y-auto w-full mb-6 xs:mb-14">
                 <Table>
                     <TableHeader>
                     <TableRow>
