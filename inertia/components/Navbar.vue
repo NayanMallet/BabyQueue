@@ -7,7 +7,7 @@ const page = usePage()
 
 <template>
   <nav class="absolute bg-white border-t bottom-0 flex justify-around items-center w-full h-16">
-    <a href="/leaderboard" class="flex flex-col items-center justify-center transition-colors h-full" :class="{ 'border-t-4 border-red-500': page.url === '/leaderboard' }">
+    <a href="/leaderboard" class="flex flex-col items-center justify-center transition-colors h-full w-16" :class="{ 'border-t-4 border-red-500': page.url === '/leaderboard' }">
       <Trophy />
       <span>Classement</span>
     </a>
@@ -22,7 +22,7 @@ const page = usePage()
       </a>
     </div>
 
-    <a href="/profile" class="flex flex-col items-center justify-center transition-colors h-full" :class="{ 'border-t-4 border-red-500': page.url === '/profile' }">
+    <a href="/profile" class="flex flex-col items-center justify-center transition-colors h-full w-16" :class="{ 'border-t-4 border-red-500': page.url === '/profile' }">
       <CircleUserRound />
       <span>Profil</span>
     </a>

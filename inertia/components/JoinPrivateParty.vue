@@ -144,40 +144,40 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Pavé numérique (seulement sur mobile) -->
-        <div v-if="isMobile" class="grid grid-cols-3 gap-2 sm:gap-3 max-w-xs mx-auto">
-          <Button
-            v-for="digit in 9"
-            :key="digit"
-            @click="addDigit(digit)"
-            variant="outline"
-            class="aspect-square text-xl sm:text-2xl font-bold hover:scale-105 active:scale-95 transition-transform w-14 h-16 sm:w-16 sm:h-20"
-            :disabled="code.length >= maxDigits"
-          >
-            {{ digit }}
-          </Button>
-          
-          <!-- Ligne du 0 avec bouton effacer -->
-          <Button 
-            @click="deleteDigit" 
-            variant="ghost"
-            class="aspect-square text-sm sm:text-base font-semibold w-14 h-16 sm:w-16 sm:h-20"
-            :disabled="code.length === 0"
-          >
-            ←
-          </Button>
-          
-          <Button
-            @click="addDigit(0)"
-            variant="outline"
-            class="aspect-square text-xl sm:text-2xl font-bold hover:scale-105 active:scale-95 transition-transform w-14 h-16 sm:w-16 sm:h-20"
-            :disabled="code.length >= maxDigits"
-          >
-            0
-          </Button>
-          
-          <div class="aspect-square"></div>
-        </div>
+      <!-- Pavé numérique (seulement sur mobile) -->
+      <div v-if="isMobile" class="grid grid-cols-3 gap-2 sm:gap-3 max-w-xs mx-auto place-items-center">
+        <Button
+          v-for="digit in 9"
+          :key="digit"
+          @click="addDigit(digit)"
+          variant="outline"
+          class="aspect-square text-xl sm:text-2xl font-bold hover:scale-105 active:scale-95 transition-transform w-14 h-16 sm:w-16 sm:h-20"
+          :disabled="code.length >= maxDigits"
+        >
+          {{ digit }}
+        </Button>
+        
+        <!-- Ligne du 0 avec bouton effacer -->
+        <Button 
+          @click="deleteDigit" 
+          variant="ghost"
+          class="aspect-square text-sm sm:text-base font-semibold w-14 h-16 sm:w-16 sm:h-20"
+          :disabled="code.length === 0"
+        >
+          ←
+        </Button>
+        
+        <Button
+          @click="addDigit(0)"
+          variant="outline"
+          class="aspect-square text-xl sm:text-2xl font-bold hover:scale-105 active:scale-95 transition-transform w-14 h-16 sm:w-16 sm:h-20"
+          :disabled="code.length >= maxDigits"
+        >
+          0
+        </Button>
+        
+        <div class="aspect-square"></div>
+      </div>
 
         <!-- Bouton effacer pour PC -->
         <div v-if="!isMobile && code.length > 0" class="flex justify-center">
