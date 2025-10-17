@@ -18,38 +18,41 @@ import { Lock } from 'lucide-vue-next'
 
 <template>
     <PageTemplate>
-        <Tabs default-value="unranked" class="w-[400px]">
-            <TabsList class="grid w-full grid-cols-2">
-            <TabsTrigger value="unranked">
-                Unranked
-            </TabsTrigger>
-            <TabsTrigger value="ranked" disabled>
-                <Lock class="h-5 w-5 absolute" />
-                Ranked
-            </TabsTrigger>
-            </TabsList>
-        </Tabs>
-        <div class="max-h-[70dvh] overflow-y-auto w-full">
-            <Table>
-                <TableHeader>
-                <TableRow>
-                    <TableHead>Joueur</TableHead>
-                    <TableHead>Victoires</TableHead>
-                    <TableHead class="text-right">
-                    Position
-                    </TableHead>
-                </TableRow>
-                </TableHeader>
-                <TableBody>
-                    <TableRow v-for="i in 30" :key="i">
-                        <TableCell>Joueur {{ i }}</TableCell>
-                        <TableCell>{{ Math.floor(Math.random() * 100) }}</TableCell>
-                        <TableCell class="text-right">
-                        N°{{ i }}
-                        </TableCell>
+        <div class="flex flex-col justify-between items-center p-6 w-full">
+            <h1 class="font-bold text-3xl p-6">Classement des Joueurs</h1>
+            <Tabs default-value="unranked" class="w-full">
+                <TabsList class="grid w-full grid-cols-2">
+                <TabsTrigger value="unranked">
+                    Unranked
+                </TabsTrigger>
+                <TabsTrigger value="ranked" class="relative" disabled>
+                    <Lock class="h-5 w-5 absolute stroke-black z-10" />
+                    <span class="opacity-30">Ranked (soon)</span>
+                </TabsTrigger>
+                </TabsList>
+            </Tabs>
+            <div class="max-h-[70dvh] overflow-y-auto w-full">
+                <Table>
+                    <TableHeader>
+                    <TableRow>
+                        <TableHead>Joueur</TableHead>
+                        <TableHead>Victoires</TableHead>
+                        <TableHead class="text-right">
+                        Position
+                        </TableHead>
                     </TableRow>
-                </TableBody>
-            </Table>
+                    </TableHeader>
+                    <TableBody>
+                        <TableRow v-for="i in 30" :key="i">
+                            <TableCell>Joueur {{ i }}</TableCell>
+                            <TableCell>{{ Math.floor(Math.random() * 100) }}</TableCell>
+                            <TableCell class="text-right">
+                            N°{{ i }}
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </div>
         </div>
     </PageTemplate>
 </template>

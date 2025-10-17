@@ -87,7 +87,7 @@ const statusColor = computed(() => {
                         </div>
                     </div>
                     <DialogFooter class="flex !justify-between">
-                        <Button class="bg-red-500">
+                        <Button variant="destructive">
                             Remove
                         </Button>
                         <Button type="submit">
