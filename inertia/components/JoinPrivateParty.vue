@@ -96,7 +96,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Pavé numérique (seulement sur mobile) -->
-      <div v-if="isMobile" class="grid grid-cols-3 gap-2 sm:gap-3 max-w-xs mx-auto">
+      <div v-if="isMobile" class="grid grid-cols-3 gap-2 sm:gap-3 max-w-xs mx-auto place-items-center">
         <Button
           v-for="digit in 9"
           :key="digit"

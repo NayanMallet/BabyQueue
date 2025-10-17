@@ -13,5 +13,6 @@ router.on('/leaderboard').renderInertia('leaderboard')
 router.on('/profile').renderInertia('profile')
 router.on('/login').renderInertia('login')
 router.on('/register').renderInertia('register')
+router.on('/admin').renderInertia('admin')
 
 
