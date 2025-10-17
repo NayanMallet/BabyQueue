@@ -6,28 +6,70 @@ import { Button } from "@/components/ui/button"
 import Separator from "@/~/components/ui/separator/Separator.vue";
 import JoinPrivateParty from "@/components/JoinPrivateParty.vue";
 import { Lock } from 'lucide-vue-next';
+import CreateParty from "@/components/CreateParty.vue";
 
 const showGameModes = ref(false);
+const showCreateJoinOptions = ref(false);
 const showJoinParty = ref(false);
+const showCreateParty = ref(false);
+const gameInProgress = ref(false);
 
 const handlePrivatePartyClick = () => {
     showGameModes.value = true;
 };
 
 const handleOneVsOneClick = () => {
+    showCreateJoinOptions.value = true;
+};
+
+const handleCreatePartyClick = () => {
+    showCreateParty.value = true;
+};
+
+const handleJoinPartyClick = () => {
     showJoinParty.value = true;
+};
+
+const handleGameStarted = () => {
+    gameInProgress.value = true;
 };
 </script>
 
 <template>
     <PageTemplate>
+        <!-- Affichage du lobby de création de partie -->
+        <div v-if="showCreateParty" class="flex flex-col lg:flex-row gap-4 items-center justify-center lg:items-start lg:justify-center">
+            <WaitingLine v-if="!gameInProgress" :position="31" />
+            
+            <div class="flex flex-col items-center justify-center w-full max-w-xs">
+                <CreateParty @game-started="handleGameStarted" />
+            </div>
+        </div>
+        
         <!-- Affichage combiné WaitingLine et JoinPrivateParty -->
-        <div v-if="showJoinParty" class="flex flex-col lg:flex-row gap-4 items-center justify-center lg:items-start lg:justify-center">
+        <div v-else-if="showJoinParty" class="flex flex-col lg:flex-row gap-4 items-center justify-center lg:items-start lg:justify-center">
             <WaitingLine :position="31" />
             
             <div class="flex flex-col items-center justify-center w-full max-w-xs">
                 <JoinPrivateParty />
             </div>
+        </div>
+        
+        <!-- Affichage des options créer/rejoindre -->
+        <div v-else-if="showCreateJoinOptions" class="flex flex-col items-center justify-center w-full max-w-xs gap-4">
+            <WaitingLine :position="31" />
+            <Button 
+                class="w-full" 
+                @click="handleCreatePartyClick"
+            >
+                Créer une partie
+            </Button>
+            <Button 
+                class="w-full" 
+                @click="handleJoinPartyClick"
+            >
+                Rejoindre une partie
+            </Button>
         </div>
         
         <!-- Affichage des modes de jeu (1v1, 2v2) -->

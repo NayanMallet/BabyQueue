@@ -29,25 +29,27 @@ import { Lock } from 'lucide-vue-next'
             </TabsTrigger>
             </TabsList>
         </Tabs>
-        <Table>
-            <TableHeader>
-            <TableRow>
-                <TableHead>Joueur</TableHead>
-                <TableHead>Victoires</TableHead>
-                <TableHead class="text-right">
-                Position
-                </TableHead>
-            </TableRow>
-            </TableHeader>
-            <TableBody>
-                <TableRow v-for="i in 10" :key="i">
-                    <TableCell>Joueur {{ i }}</TableCell>
-                    <TableCell>{{ Math.floor(Math.random() * 100) }}</TableCell>
-                    <TableCell class="text-right">
-                    N°{{ i }}
-                    </TableCell>
+        <div class="max-h-[70dvh] overflow-y-auto w-full">
+            <Table>
+                <TableHeader>
+                <TableRow>
+                    <TableHead>Joueur</TableHead>
+                    <TableHead>Victoires</TableHead>
+                    <TableHead class="text-right">
+                    Position
+                    </TableHead>
                 </TableRow>
-            </TableBody>
-        </Table>
+                </TableHeader>
+                <TableBody>
+                    <TableRow v-for="i in 30" :key="i">
+                        <TableCell>Joueur {{ i }}</TableCell>
+                        <TableCell>{{ Math.floor(Math.random() * 100) }}</TableCell>
+                        <TableCell class="text-right">
+                        N°{{ i }}
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+        </div>
     </PageTemplate>
 </template>
