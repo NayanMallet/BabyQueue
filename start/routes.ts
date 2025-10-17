@@ -8,6 +8,7 @@
 */
 
 import router from '@adonisjs/core/services/router'
+router.on('/').renderInertia('login')
 router.on('/play').renderInertia('play')
 router.on('/leaderboard').renderInertia('leaderboard')
 router.on('/profile').renderInertia('profile')
