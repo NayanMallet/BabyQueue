@@ -14,7 +14,7 @@ const page = usePage()
 
     <div class="absolute -mt-10">
       <a
-        href="/"
+        href="/play"
         class="flex flex-col items-center justify-center bg-red-500 text-white rounded-full w-22 h-22 shadow-lg hover:bg-red-600 transition border-8 border-gray-100"
       >
         <Gamepad2 class="w-6 h-6" />
