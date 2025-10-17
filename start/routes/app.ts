@@ -1,3 +1,4 @@
+// routes/app.ts
 import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
 const UsersController = () => import('#controllers/users_controller')
@@ -5,6 +6,10 @@ const UsersController = () => import('#controllers/users_controller')
 router.group(() => {
   router.get('login', [UsersController, 'renderLogin']).as('pages.login')
   router.post('login', [UsersController, 'login']).as('auth.login')
+
+  router.get('register', [UsersController, 'renderRegister']).as('pages.register')
+  router.post('register', [UsersController, 'register']).as('auth.register')
+
   router.post('logout', [UsersController, 'logout']).as('auth.logout')
 })
 
