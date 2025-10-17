@@ -37,7 +37,7 @@ import { Lock } from 'lucide-vue-next'
                     <TableRow>
                         <TableHead>Joueur</TableHead>
                         <TableHead>Victoires</TableHead>
-                        <TableHead class="text-right">
+                        <TableHead>
                         Position
                         </TableHead>
                     </TableRow>
@@ -46,7 +46,7 @@ import { Lock } from 'lucide-vue-next'
                         <TableRow v-for="i in 30" :key="i">
                             <TableCell>Joueur {{ i }}</TableCell>
                             <TableCell>{{ Math.floor(Math.random() * 100) }}</TableCell>
-                            <TableCell class="text-right">
+                            <TableCell>
                             N°{{ i }}
                             </TableCell>
                         </TableRow>
