@@ -33,7 +33,7 @@ const endGame = (result: 'win' | 'lose') => {
 
 // Réinitialiser pour une nouvelle partie
 const GoToLobby = () => {
-  window.location.href = '/'; // Rediriger vers la page d'accueil ou du lobby
+  window.location.href = '/play'; // Rediriger vers la page d'accueil ou du lobby
 };
 </script>
 
